@@ -1,0 +1,365 @@
+:root {
+    --bg-color: #000000;
+    --surface-color: #1a1a1a;
+    --surface-hover: #2c2c2c;
+    --primary-color: #f5c518; /* Amarelo IMDb */
+    --primary-hover: #d4a700;
+    --text-main: #ffffff;
+    --text-muted: #b3b3b3;
+    --border-color: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header & Nav */
+header {
+    background-color: #121212;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.imdb-badge {
+    background-color: var(--primary-color);
+    color: #000;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.logo-text {
+    color: var(--text-main);
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--primary-color);
+}
+
+/* Container Genérico */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    flex: 1;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    bottom: 5px;
+    width: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.text-center { text-align: center; padding-left: 0; }
+.text-center::before { display: none; }
+.subtitle { color: var(--text-muted); margin-bottom: 30px; }
+
+/* Hero Section (Home) */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format&fit=crop') center/cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    margin-bottom: 25px;
+}
+
+/* Botões */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #000;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.2s, transform 0.1s;
+}
+.btn-primary:hover { background-color: var(--primary-hover); }
+.btn-primary:active { transform: scale(0.98); }
+
+/* Lista de Filmes (Home) */
+.movie-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.movie-item {
+    background-color: var(--surface-color);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.movie-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
+}
+
+.rank {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    width: 50px;
+}
+
+.movie-poster {
+    width: 70px;
+    height: 105px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    border: 1px solid #333;
+}
+
+.movie-info {
+    flex: 1;
+}
+
+.movie-info h3 { font-size: 1.2rem; margin-bottom: 5px; }
+.year { color: var(--text-muted); font-size: 0.9rem; }
+
+.rating {
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.star { color: var(--primary-color); }
+
+/* Formulário (Contato) */
+.form-wrapper {
+    background-color: var(--surface-color);
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid var(--border-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: var(--text-main);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: #000;
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.btn-submit:hover { background-color: var(--primary-hover); }
+
+/* Comunidade (Cards) */
+.suggestions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.suggestion-card {
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    background-color: #242424;
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header strong { color: var(--primary-color); }
+.date { font-size: 0.8rem; color: var(--text-muted); }
+
+.card-body {
+    padding: 20px 15px;
+    color: #e0e0e0;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px;
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    border: 1px dashed #555;
+}
+
+.empty-state p { margin-bottom: 20px; color: var(--text-muted); }
+
+/* Portfolio (Sobre) */
+.about-wrapper {
+    background-color: var(--surface-color);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+.about-content { line-height: 1.8; font-size: 1.1rem; }
+.feature-list { list-style: none; margin-top: 20px; }
+.feature-list li { margin-bottom: 12px; background: #242424; padding: 10px 15px; border-radius: 6px; border-left: 4px solid var(--primary-color);}
+.check { color: var(--primary-color); font-weight: bold; margin-right: 10px; }
+
+/* Footer */
+footer {
+    background-color: #121212;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* Animações */
+.fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header { flex-direction: column; gap: 15px; }
+    nav { flex-wrap: wrap; justify-content: center; }
+    .hero h1 { font-size: 2rem; }
+}
+
+/* Busca de CEP */
+.cep-row {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+}
+
+.cep-row input {
+    flex: 1;
+    min-width: 0;
+}
+
+.cep-row .btn-submit {
+    margin-top: 0;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.cep-message {
+    margin-top: 8px;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+    .cep-row {
+        flex-direction: column;
+    }
+}

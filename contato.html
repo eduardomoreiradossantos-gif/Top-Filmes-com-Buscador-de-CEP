@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugerir Filme - Top IMDb</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="imdb-badge">IMDb</span> <span class="logo-text">Top Filmes</span>
+        </div>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../index.php">Comunidade</a>
+            <a href="contato.html" class="active">Sugerir Filme</a>
+            <a href="portifolio.html">Sobre</a>
+        </nav>
+    </header>
+
+    <main class="container fade-in">
+        <div class="form-wrapper">
+            <h2 class="section-title text-center">Indique um Filme</h2>
+            <p class="text-center subtitle">Compartilhe sua obra favorita com nossa comunidade.</p>
+            
+            <form action="../processa_contato.php" method="POST" class="custom-form">
+                <div class="form-group">
+                    <label for="nome">Como devemos te chamar?</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome ou apelido" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Seu melhor e-mail</label>
+                    <input type="email" id="email" name="email" placeholder="nome@exemplo.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cep">CEP</label>
+                    <div class="cep-row">
+                        <input type="text" id="cep" name="cep" placeholder="Digite o CEP (8 números)" maxlength="9" inputmode="numeric">
+                        <button type="button" id="buscar-cep" class="btn-submit">Buscar CEP</button>
+                    </div>
+                    <p id="mensagem-cep" class="cep-message" role="status" aria-live="polite"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="rua">Rua</label>
+                    <input type="text" id="rua" name="rua" placeholder="Preenchido pelo CEP" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" id="bairro" name="bairro" placeholder="Preenchido pelo CEP" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" name="cidade" placeholder="Preenchido pelo CEP" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <input type="text" id="estado" name="estado" placeholder="Preenchido pelo CEP" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="sugestao_filme">Qual filme e por que ele é incrível?</label>
+                    <textarea id="sugestao_filme" name="sugestao_filme" rows="5" placeholder="Escreva sua recomendação aqui..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit">Enviar Sugestão</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Top Filmes IMDb Clone - Projeto Acadêmico</p>
+    </footer>
+    <script src="../script/script.js"></script>
+</body>
+</html>

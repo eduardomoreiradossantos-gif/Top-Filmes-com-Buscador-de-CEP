@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Projeto - Top IMDb</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="imdb-badge">IMDb</span> <span class="logo-text">Top Filmes</span>
+        </div>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../index.php">Comunidade</a>
+            <a href="contato.html">Sugerir Filme</a>
+            <a href="portifolio.html" class="active">Sobre</a>
+        </nav>
+    </header>
+
+    <main class="container fade-in">
+        <div class="about-wrapper">
+            <h2 class="section-title">Sobre este Projeto</h2>
+            <div class="about-content">
+                <p>Este sistema foi desenvolvido como requisito para a disciplina de <strong>Desenvolvimento Web Back-End</strong>.</p>
+                
+                <h3>O que foi implementado:</h3>
+                <ul class="feature-list">
+                    <li><span class="check">✓</span> <strong>Design Moderno:</strong> Interface baseada no estilo IMDb, responsiva e com fontes do Google Fonts (Poppins).</li>
+                    <li><span class="check">✓</span> <strong>Banco de Dados MySQL:</strong> Armazenamento persistente das sugestões via tabela <code>sugestoes_filmes</code>.</li>
+                    <li><span class="check">✓</span> <strong>Conexão Segura:</strong> Uso da extensão <strong>PDO</strong> do PHP com tratamento de exceções (<code>ATTR_ERRMODE</code>).</li>
+                    <li><span class="check">✓</span> <strong>Segurança contra SQL Injection:</strong> Utilização exclusiva de <strong>Prepared Statements</strong> (<code>bindParam</code>).</li>
+                    <li><span class="check">✓</span> <strong>Segurança contra XSS:</strong> Saída de dados do banco protegida com <code>htmlspecialchars()</code> no <code>index.php</code>.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Top Filmes IMDb Clone - Projeto Acadêmico</p>
+    </footer>
+    <script src="../script/script.js"></script>
+</body>
+</html>
