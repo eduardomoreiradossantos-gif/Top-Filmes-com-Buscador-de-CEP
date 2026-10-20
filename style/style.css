@@ -333,33 +333,3 @@ footer {
     nav { flex-wrap: wrap; justify-content: center; }
     .hero h1 { font-size: 2rem; }
 }
-
-/* Busca de CEP */
-.cep-row {
-    display: flex;
-    gap: 10px;
-    align-items: stretch;
-}
-
-.cep-row input {
-    flex: 1;
-    min-width: 0;
-}
-
-.cep-row .btn-submit {
-    margin-top: 0;
-    white-space: nowrap;
-    cursor: pointer;
-}
-
-.cep-message {
-    margin-top: 8px;
-    color: var(--primary-color);
-    font-size: 0.9rem;
-}
-
-@media (max-width: 480px) {
-    .cep-row {
-        flex-direction: column;
-    }
-}
